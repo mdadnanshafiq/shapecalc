@@ -133,5 +133,5 @@ for( let bg of bgColor){
 
 
 document.getElementById('reset').addEventListener('click', function () {
-
+    window.location.reload();
 })

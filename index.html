@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>shapeCalc()</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        .inter {
+            font-family: "Inter", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="inter">
+    <header
+        class="h-28 lg:max-w-[1600px] max-w-[95vw] mx-auto bg-blue-300 rounded-lg my-8 p-4 flex lg:justify-start justify-center items-center">
+        <h1 class="text-5xl font-bold">shapeCalc()</h1>
+    </header>
+    <main class="flex lg:flex-row flex-col gap-4">
+        <section>
+            <div id="bgColor" class="card border-2 border-double border-slate-400 w-80 mx-auto bg-base-100 shadow-xl">
+                <figure class="px-10 pt-10">
+                    <img src="images/triangle.png" alt="" class="rounded-xl" />
+                </figure>
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Triangle</h2>
+                    <p>Area (A) = 0.5 X b X h</p>
+                    <div class="flex justify-center items-center *:m-1">
+                        <input id="triBase" class="w-1/3 bg-gray-200 rounded-sm p-2" type="text" placeholder="b">
+                        <span>cm</span>
+                        <input id="triHeight" class="w-1/3 bg-gray-200 rounded-sm p-2" type="text" placeholder="h">
+                        <span>cm</span>
+                    </div>
+                    <div>
+                        <p id="triShow">Triangle Area: <span id="triResult"></span>cm<sup>2</sup></p>
+                    </div>
+                    <div class="card-actions w-full">
+                        <button id="triBtn" class="btn btn-primary w-full">Calculate</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card border-2 border-double border-slate-400 w-80 mx-auto bg-base-100 shadow-xl">
+                <div class="card-body items-center text-center">
+                    <h2 class="card-title">Area Calculation</h2>
+                    <ul id="resultList">
+
+                    </ul>
+                    <div class="card-actions">
+                        <button id="reset" class="btn btn-primary">RESET ALL</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer
+        class="h-28 lg:max-w-[1600px] max-w-[95vw] mx-auto bg-blue-300 rounded-lg my-8 p-4 flex lg:justify-start justify-center items-center">
+        <p class="text-xs font-bold">Created by <span class="text-red-600"><a
+                    href="https://www.linkedin.com/in/mdadnanshafiq/" target="_blank">Adnan</a></span></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

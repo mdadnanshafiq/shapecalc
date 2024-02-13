@@ -11,7 +11,7 @@ triBtn.addEventListener('click', function () {
     triResult.innerText = calc;
     let inner = 'triShow';
     let outer = 'triTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 
@@ -27,7 +27,7 @@ recBtn.addEventListener('click', function () {
     recResult.innerText = calc;
     let inner = 'recShow';
     let outer = 'recTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 let parBase = document.getElementById('parBase');
@@ -42,7 +42,7 @@ parBtn.addEventListener('click', function () {
     parResult.innerText = calc;
     let inner = 'parShow';
     let outer = 'parTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 let romBase = document.getElementById('romBase');
@@ -57,7 +57,7 @@ romBtn.addEventListener('click', function () {
     romResult.innerText = calc;
     let inner = 'romShow';
     let outer = 'romTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 
@@ -73,7 +73,7 @@ penBtn.addEventListener('click', function () {
     penResult.innerText = calc;
     let inner = 'penShow';
     let outer = 'penTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 let eliBase = document.getElementById('eliBase');
@@ -88,7 +88,7 @@ eliBtn.addEventListener('click', function () {
     eliResult.innerText = calc;
     let inner = 'eliShow';
     let outer = 'eliTemp';
-    areaShow(inner, outer);
+    areaShow(inner, outer, calc);
 })
 
 
@@ -103,10 +103,19 @@ function getFloat(a, b) {
     return values;
 }
 
-function areaShow(a, b) {
+function areaShow(a, b, d) {
     let li = document.createElement('li');
+    let convert = document.createElement('button');
+    convert.innerText = 'Convert to Meter';
+    convert.addEventListener('click', function(){
+        let e = d * 0.01;
+        convert.innerText = e;
+    })
+    convert.classList.add('btn');
+    convert.classList.add('conBtn');
     li.innerText = document.getElementById(a).innerText;
     li.classList.add(b);
+    li.appendChild(convert);
     let c = '.' + b;
     let remove = resultList.querySelectorAll(c);
     remove.forEach(i => {
@@ -114,6 +123,8 @@ function areaShow(a, b) {
     });
     resultList.appendChild(li);
 }
+
+
 
 
 let bgColor = document.querySelectorAll('.bgColor');
